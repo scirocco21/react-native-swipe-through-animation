@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Card } from 'react-native-elements'
 import Deck from './src/Deck';
 
 const data = [
@@ -16,7 +17,13 @@ const data = [
 export default class App extends Component {
   renderCard(item) {
     return (
-      <Text>{item.text}</Text>
+      <Card
+        key={item.id} 
+        title={item.text}
+        image={{ uri: item.uri }}
+      >
+       <Text>Very nice card</Text>
+      </Card>
     )
   }
   render() {
@@ -34,5 +41,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });

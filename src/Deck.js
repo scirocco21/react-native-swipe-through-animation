@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Animated} from 'react-native'
+import {View, Animated,StyleSheet} from 'react-native'
 
 export default class Deck extends Component {
   renderCards() {
@@ -7,10 +7,16 @@ export default class Deck extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.deck}
+      >
         {this.renderCards()}
       </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+    deck: {
+      width: '75%'
+    }
+});
