@@ -1,12 +1,16 @@
-import React, {Component} from 'react-native'
+import React, {Component} from 'react'
 import {View, Animated} from 'react-native'
 
-class Deck extends Component {
+export default class Deck extends Component {
+  renderCards() {
+    return this.props.data.map(item => this.props.renderCard(item))
+  }
   render() {
     return (
-      <View />
+      <View>
+        {this.renderCards()}
+      </View>
     )
   }
 }
 
-export default Deck;
